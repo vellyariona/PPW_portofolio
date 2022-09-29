@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('project/hapus/{id}',[App\Http\Controllers\project_controller::class,'hapus']);
+
+Route::resource('project','App\Http\Controllers\project_controller');

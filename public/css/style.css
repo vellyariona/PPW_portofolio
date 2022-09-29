@@ -1,0 +1,38 @@
+
+.profil {
+    padding-top: 10rem;
+}
+
+section {
+    padding-bottom: 5rem;
+    padding: 10%;
+    background-color: #e4ba00;
+}
+
+a.card-box {
+    color: #e4ba00;
+}
+
+a.card-box:hover {
+    color: #0080ff;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #e4ba00 ;
+}
+
+.btn:hover {
+    background-color: #e4ba00 ;
+    color: #ffffff ;
+}
+
+footer.copyright{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+}
+
+p.end {
+    margin: 10px;
+}
