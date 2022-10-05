@@ -45,16 +45,11 @@ class project_controller extends Controller
      */
     public function store(Request $request)
     {
-        // 
-        $this->validate($request,[
-            'nama_project' => 'required|min:3|max:10',
-            'deskripsi_project' => 'required'
-        ]);
+        //
         $project = new project_model;
         $project->nama_project = $request->input('nama_project');
         $project->deskripsi_project = $request->input('deskripsi_project');
         $project->save();
-        return redirect('/project');
     }
 
     /**
@@ -100,22 +95,11 @@ class project_controller extends Controller
      */
     public function update(Request $request, $id) //request dari view, dan id dari primary key
     {
-        $this->validate($request,[
-            'nama_project' => 'required|min:3|max:10',
-            'deskripsi_project' => 'required'
+        Post::where('id', $request->id)->update(['title'=>$request->title,
+         'description'=> $request->description
         ]);
-
-
-        $project = project_model::find($id);
-        $project->nama_project = $request->input('nama_project');
-        $project->deskripsi_project = $request->input('deskripsi_project');
-        $project->update();
-        return redirect('project');
-        // project_model::where('id', $request->id)->update(['nama_project'=>$request->nama_project,
-        //  'deskripsi_project'=> $request->deskripsi_project
-        // ]);
         
-        // return redirect('project');
+        return redirect('project');
         //
     }
 
@@ -125,18 +109,10 @@ class project_controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id)
-    // {
-    //     $post = project_model::find($id);
-    //     $post->delete();
-    //     return redirect('project')-> with('success','data succesfully removed');   
-    //     //
-    // }
-
-    public function hapus($id)
+    public function destroy($id)
     {
-        $project = project_model::find($id);
-        $project->delete();
+        $post = Post::find($id);
+        $post->delete();
         return redirect('project')-> with('success','data succesfully removed');   
         //
     }
