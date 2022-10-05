@@ -60,6 +60,13 @@
         @else
         <h3>Tidak ada data.</h3>
         @endif
+
+        Halaman : {{ $project->currentPage() }} <br />
+        Jumlah Data : {{ $project->total() }} <br />
+        Data Per Halaman : {{ $project->perPage() }} <br />
+        <div class="d-flex">
+        {{ $project->links() }}
+        </div>
     </div>
 </div>
 

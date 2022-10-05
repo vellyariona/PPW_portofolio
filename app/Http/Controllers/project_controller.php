@@ -18,7 +18,7 @@ class project_controller extends Controller
         // return Post::All();
         $data = array(
             'id' => "project",
-            'project' => project_model::all()
+            'project' => project_model::orderBy('created_at', 'desc')->paginate(10)
     
         );
         // return view('posts.index')->with($data);
