@@ -16,7 +16,8 @@
         @endif
         <h1>Add Project</h1>
         <!-- <form> -->
-        <form action="{{ route('project.store') }}" method="POST">
+        <!-- <form action="{{ route('project.store') }}" method="multipart/form-data"> -->
+        <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
             <div class="form-group">
                 <label for="nama_project">Nama Project</label>
@@ -26,6 +27,17 @@
                 <label for="description">Deskripsi Project</label>
                 <textarea class = "form-control" id="deskripsi_project" rows="5" name="deskripsi_project"></textarea>
             </div>
+
+            <div class="form-group">
+                <label for="input-file">File input</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="input-file" name="picture">
+                        <label class="custom-file-label" for="input-file">Choose file</label>
+                    </div>
+                </div>
+            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
