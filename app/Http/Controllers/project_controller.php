@@ -57,15 +57,21 @@ class project_controller extends Controller
         //     'description' => 'required',
         //     'picture' => 'image|nullable|max:1999'
         // ]);
-        
+        // dd($request->hasFile('picture'));
 
         if ($request->hasFile('picture')){
-            //ada file yang diupload
+
+            try {
+                 //ada file yang diupload
             $filenameWithExt = $request->file('picture')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('picture')->getClientOriginalExtension();
             $filenameSimpan = $filename . '_' . time() . '.' . $extension;
             $path = $request->file('picture')->storeAs('public/posts_image', $filenameSimpan);
+            } catch (\Throwable $th) {
+                dd($th);
+            }
+           
         } else{
             //tidak ada file yang diupload
            $filenameSimpan = 'noimage.png';

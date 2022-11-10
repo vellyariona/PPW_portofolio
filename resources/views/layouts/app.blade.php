@@ -5,6 +5,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="{{ asset('lightbox2/dist/css/lightbox.min.css')
+  }}">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Starter</title>
@@ -66,7 +68,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
+<script src="{{ asset('lightbox2/dist/js/lightbox-plus-jquery.min.js')
+}}"></script>
 <!-- jQuery -->
 <script src="{{asset('lte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
