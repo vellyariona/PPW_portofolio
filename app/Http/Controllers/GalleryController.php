@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\project_model;
+// use App\Models\Post;
+
 
 class GalleryController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
